@@ -1,10 +1,23 @@
-﻿  Food.cpp
-  Home.cpp
-  MainMeal.cpp
-  Restaurant.cpp
-  SignIn.cpp
-  SignUp.cpp
-  Generating Code...
-  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
-  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\Project OOP\Otlob\Debug\Otlob.exe
-  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\Project OOP\Otlob\Debug\Otlob.pdb (Full PDB)
+﻿Build started 4/20/2018 4:33:05 PM.
+     1>Project "D:\OTlob\OB\Otlob\Otlob.vcxproj" on node 2 (Build target(s)).
+       Project file contains ToolsVersion="14.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\\" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /TP /FUD:\Bunifu_UI_v1.52.dll /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.dll" /analyze- /errorReport:prompt Home.cpp SignIn.cpp SignUp.cpp
+         Home.cpp
+         SignIn.cpp
+         SignUp.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\OTlob\OB\Debug\Otlob.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Otlob.Home.resources /ASSEMBLYRESOURCE:Debug\Otlob.SignIn.resources /ASSEMBLYRESOURCE:Debug\Otlob.SignUp.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\OTlob\OB\Debug\Otlob.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\Food.obj
+         Debug\Home.obj
+         Debug\MainMeal.obj
+         Debug\Restaurant.obj
+         Debug\SignIn.obj
+         Debug\SignUp.obj
+         "Debug\.NETFramework,Version=v4.5.2.AssemblyAttributes.obj"
+         Otlob.vcxproj -> D:\OTlob\OB\Debug\Otlob.exe
+     1>Done Building Project "D:\OTlob\OB\Otlob\Otlob.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.45
