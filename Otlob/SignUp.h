@@ -249,11 +249,12 @@ namespace Otlob {
             this->label10->AutoSize = true;
             this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label10->Location = System::Drawing::Point(745, 343);
+            this->label10->Location = System::Drawing::Point(710, 338);
             this->label10->Name = L"label10";
             this->label10->Size = System::Drawing::Size(107, 17);
             this->label10->TabIndex = 21;
             this->label10->Text = L"Show Password";
+            this->label10->Click += gcnew System::EventHandler(this, &SignUp::label10_Click);
             // 
             // checkBox_ShPass
             // 
@@ -264,7 +265,7 @@ namespace Otlob {
             this->checkBox_ShPass->Checked = false;
             this->checkBox_ShPass->CheckedOnColor = System::Drawing::Color::Maroon;
             this->checkBox_ShPass->ForeColor = System::Drawing::Color::White;
-            this->checkBox_ShPass->Location = System::Drawing::Point(727, 343);
+            this->checkBox_ShPass->Location = System::Drawing::Point(686, 338);
             this->checkBox_ShPass->Margin = System::Windows::Forms::Padding(6);
             this->checkBox_ShPass->Name = L"checkBox_ShPass";
             this->checkBox_ShPass->Size = System::Drawing::Size(20, 20);
@@ -346,6 +347,7 @@ namespace Otlob {
             this->bunifuMaterialTextbox4->Size = System::Drawing::Size(370, 44);
             this->bunifuMaterialTextbox4->TabIndex = 18;
             this->bunifuMaterialTextbox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->bunifuMaterialTextbox4->OnValueChanged += gcnew System::EventHandler(this, &SignUp::bunifuMaterialTextbox4_OnValueChanged);
             // 
             // Textbox_Password
             // 
@@ -456,7 +458,7 @@ namespace Otlob {
             this->bunifuFlatButton6->IconVisible = true;
             this->bunifuFlatButton6->IconZoom = 90;
             this->bunifuFlatButton6->IsTab = false;
-            this->bunifuFlatButton6->Location = System::Drawing::Point(476, 458);
+            this->bunifuFlatButton6->Location = System::Drawing::Point(591, 461);
             this->bunifuFlatButton6->Margin = System::Windows::Forms::Padding(6);
             this->bunifuFlatButton6->Name = L"bunifuFlatButton6";
             this->bunifuFlatButton6->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
@@ -465,13 +467,14 @@ namespace Otlob {
                 static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
             this->bunifuFlatButton6->OnHoverTextColor = System::Drawing::Color::White;
             this->bunifuFlatButton6->selected = false;
-            this->bunifuFlatButton6->Size = System::Drawing::Size(230, 59);
+            this->bunifuFlatButton6->Size = System::Drawing::Size(124, 29);
             this->bunifuFlatButton6->TabIndex = 17;
             this->bunifuFlatButton6->Text = L"Submit";
             this->bunifuFlatButton6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             this->bunifuFlatButton6->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
                 static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
             this->bunifuFlatButton6->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+            this->bunifuFlatButton6->Click += gcnew System::EventHandler(this, &SignUp::bunifuFlatButton6_Click);
             // 
             // label_SignUp
             // 
@@ -998,6 +1001,12 @@ private: System::Void Textbox_Password_OnValueChanged(System::Object^  sender, S
 }
 private: System::Void checkBox_ShPass_OnChange(System::Object^  sender, System::EventArgs^  e) {
     Textbox_Password->isPassword = (!checkBox_ShPass->Checked);
+}
+private: System::Void bunifuFlatButton6_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label10_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void bunifuMaterialTextbox4_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
