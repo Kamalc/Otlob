@@ -31,8 +31,3 @@ Class Otlob.Home: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class MainMeal: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Interfaces:
-    System.IDisposable
-  Methods:
-    ~MainMeal(): PrivateScope, Public, HideBySig
-    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

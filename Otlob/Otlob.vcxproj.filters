@@ -61,8 +61,5 @@
     <EmbeddedResource Include="SignIn.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUp.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -5,12 +5,14 @@
 #include <cliext/vector>
 #include <cliext/list>
 using namespace std;
+//using namespace default;  
 
 public ref class MainMeal //: public Food
 {
-	cliext::list<int> sd;
-//    String s;
-	cliext::vector<int> fsa;
+	//cliext::list<int> sd;
+	 System::String^ s;
+	 
+	//cliext::vector<int> fsa;
 	//int Price;
 	//list<int> asd;
 public:
