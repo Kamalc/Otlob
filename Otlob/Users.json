@@ -1,0 +1,30 @@
+{"Users":
+  {"Kimo": {
+    "Name": {
+      "First": "mohammed",
+      "Last": "amr"
+    },
+    "Email": "kimo201224@gmail.com",
+    "Password": "ban10ban",
+    "Date Birth": {
+      "Year": 1998,
+      "Month": 4,
+      "Day": 17
+    },
+    "Phone": "01123456979"
+  },
+  "EntaMalOmk": {
+    "Name": {
+      "First": "mohammed",
+      "Last": "amr"
+    },
+    "Email": "hamadaaaaa@gmail.com",
+    "Password": 555555555,
+    "Date Birth": {
+      "Year": 1998,
+      "Month": 7,
+      "Day": 20
+    },
+    "Phone": "01123456979"
+  }}
+}
