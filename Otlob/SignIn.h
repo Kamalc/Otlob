@@ -270,6 +270,7 @@ namespace Otlob {
             this->checkBox_ShPass->Name = L"checkBox_ShPass";
             this->checkBox_ShPass->Size = System::Drawing::Size(20, 20);
             this->checkBox_ShPass->TabIndex = 20;
+            this->checkBox_ShPass->OnChange += gcnew System::EventHandler(this, &SignIn::checkBox_ShPass_OnChange);
             // 
             // label8
             // 
@@ -396,6 +397,7 @@ namespace Otlob {
             this->Textbox_Password->Size = System::Drawing::Size(370, 44);
             this->Textbox_Password->TabIndex = 18;
             this->Textbox_Password->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->Textbox_Password->OnValueChanged += gcnew System::EventHandler(this, &SignIn::Textbox_Password_OnValueChanged);
             // 
             // bunifuMaterialTextbox1
             // 
@@ -998,6 +1000,17 @@ private: System::Void button_SubmitSI_Click(System::Object^  sender, System::Eve
     {
         MessageBox::Show("Invalid User Name", "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Asterisk);
     }
+}
+private: System::Void Textbox_Password_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
+
+
+    Textbox_Password->isPassword = (!checkBox_ShPass->Checked);
+
+}
+private: System::Void checkBox_ShPass_OnChange(System::Object^  sender, System::EventArgs^  e) {
+
+    Textbox_Password->isPassword = (!checkBox_ShPass->Checked);
+
 }
 };
 }
