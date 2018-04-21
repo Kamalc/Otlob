@@ -1270,7 +1270,7 @@ namespace Otlob {
 				 this->dragging = false;
 			 }
 	private: System::Void Button_SignUp_Click(System::Object^  sender, System::EventArgs^  e) {
-				 SignUp^ su = gcnew SignUp();
+				 SignUp^ su = gcnew SignUp(this);
 				 su->Show();
 				 this->Hide();
 		 }
