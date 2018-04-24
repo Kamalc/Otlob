@@ -1,10 +1,9 @@
-{
-  "Users": {
-    
+
+  {
     "Kimo": {
       "Name": {
-        "First": "mohammed",
-        "Last": "amr"
+        "First": "Kamal",
+        "Last": "Saad"
       },
       "Email": "kimo201224@gmail.com",
       "Password": "ban10ban",
@@ -28,6 +27,19 @@
         "Day": 20
       },
       "Phone": "01123456979"
+    },
+    "roony6": {
+      "Name": {
+        "First": "mosa",
+        "Last": "elf4e5"
+      },
+      "Email": "rony6@gmail.com",
+      "Password": 12345,
+      "Date Birth": {
+        "Year": 1998,
+        "Month": 10,
+        "Day": 3
+      },
+      "Phone": "010549741654"
     }
   }
-}

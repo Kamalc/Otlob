@@ -1,6 +1,7 @@
 #pragma once
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/json_parser.hpp>
+#include<iostream>
+#include <fstream>      
+#include "json.hpp"
 #include <msclr\marshal_cppstd.h>
 
 namespace Otlob {
@@ -11,9 +12,9 @@ namespace Otlob {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-    namespace pt = boost::property_tree;
+    using json = nlohmann::json;
     using namespace msclr::interop;
-    using namespace std;
+  //  using namespace std;
 
 	/// <summary>
 	/// Summary for SignIn
@@ -966,28 +967,16 @@ namespace Otlob {
 		 }
 private: System::Void button_SubmitSI_Click(System::Object^  sender, System::EventArgs^  e) {
 
-    pt::ptree root;
-    pt::read_json("Users.json", root);
-    String^User_name_input = bunifuMaterialTextbox1->Text;
-    String^PassWord_input = Textbox_Password->Text;
-    string UserName = marshal_as<std::string>(User_name_input);
-    string PassWord = marshal_as<std::string>(PassWord_input);
-
-    bool Valid_UserName = 0;
-    for (pt::ptree::value_type &User : root.get_child("Users"))
+       std::ifstream i("Users.json");
+       json j;
+       i >> j;
+     String^User_name_input = bunifuMaterialTextbox1->Text;
+     String^PassWord_input = Textbox_Password->Text;
+     std:: string UserName = marshal_as<std::string>(User_name_input);//std
+     std::  string PassWord = marshal_as<std::string>(PassWord_input);
+    if (j.find(UserName) != j.end())
     {
-        string name = User.first;
-        if (name == UserName)
-        {
-            Valid_UserName = 1;
-            break;
-       }
-    }
-    if (Valid_UserName)
-    {
-       string path = "Users."+UserName + ".Password";
-       string Password_Data_in_Base= root.get<string>(path);
-       if (PassWord == Password_Data_in_Base)
+       if (j[UserName]["Password"] == PassWord)
        {
            MessageBox::Show("OK", "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Asterisk);
        }
