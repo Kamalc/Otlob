@@ -1,5 +1,9 @@
 #pragma once
 #include "SignIn.h"
+#include<iostream>
+#include <fstream>      
+#include "json.hpp"
+#include <msclr\marshal_cppstd.h>
 namespace Otlob {
 
 	using namespace System;
@@ -8,7 +12,8 @@ namespace Otlob {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+    using json = nlohmann::json;
+    using namespace msclr::interop;
 	/// <summary>
 	/// Summary for SignUp
 	/// </summary>
@@ -423,6 +428,7 @@ namespace Otlob {
             this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox2->TabIndex = 22;
             this->pictureBox2->TabStop = false;
+            this->pictureBox2->Click += gcnew System::EventHandler(this, &SignUp::pictureBox2_Click);
             // 
             // label10
             // 
@@ -720,6 +726,7 @@ namespace Otlob {
             this->bunifuMaterialTextbox1->Size = System::Drawing::Size(370, 44);
             this->bunifuMaterialTextbox1->TabIndex = 18;
             this->bunifuMaterialTextbox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->bunifuMaterialTextbox1->OnValueChanged += gcnew System::EventHandler(this, &SignUp::bunifuMaterialTextbox1_OnValueChanged);
             // 
             // textBox_LastName
             // 
@@ -1346,6 +1353,54 @@ namespace Otlob {
 				 this->Hide();
 		 }
 private: System::Void button_SubmitSU_Click(System::Object^  sender, System::EventArgs^  e) {
+
+    String^FirstName_input = textBox_FirstName->Text;
+    String^LastName_input = textBox_LastName->Text;
+    String^Username_input = bunifuMaterialTextbox1->Text;
+    String^Email_input = textBox_Email->Text;
+    String^Password_input = Textbox_Password->Text;
+    String^Phone_input = textBox_Phone->Text;
+    String^Day_input =Convert::ToString(bunifuDatepicker1->Value.Day);
+    String^Month_input = Convert::ToString(bunifuDatepicker1->Value.Month);
+    String^Year_input = Convert::ToString(bunifuDatepicker1->Value.Year);
+
+    // std::string 
+    std::string FirstName = marshal_as<std::string>(FirstName_input);
+    std::string LastName = marshal_as<std::string>(LastName_input);
+    std::string Username = marshal_as<std::string>(Username_input);
+    std::string Email = marshal_as<std::string>(Email_input);
+    std::string Password = marshal_as<std::string>(Password_input);
+    std::string Phone = marshal_as<std::string>(Phone_input);
+    std::string Day = marshal_as<std::string>(Day_input);
+    std::string Month = marshal_as<std::string>(Month_input);
+    std::string Year = marshal_as<std::string>(Year_input);
+
+    std::ifstream i("Users.json");
+       json j;
+       i >> j;
+       j[Username]["Name"]["First"] = FirstName;
+       j[Username]["Name"]["Last"] = LastName;
+       j[Username]["Email"]= Email;
+       j[Username]["Password"] = Password;
+       j[Username]["Date Birth"]["Day"] = Day;
+       j[Username]["Date Birth"]["Month"] = Month;
+       j[Username]["Date Birth"]["Year"]= Year;
+       j[Username]["Phone"] = Phone;
+
+       std::ofstream o("Users.json");
+       o << std::setw(4) << j << std::endl;
+    button_SubmitSU->Enabled = (!(j.find(marshal_as<std::string>(Username_input)) != j.end()));
+
+}
+private: System::Void pictureBox2_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void bunifuMaterialTextbox1_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
+
+    std::ifstream i("Users.json");
+    json j;
+    i >> j;
+    String^Username_input = bunifuMaterialTextbox1->Text;
+    button_SubmitSU->Enabled = (!(j.find(marshal_as<std::string>(Username_input)) != j.end()));
 }
 };
 }
