@@ -14,7 +14,7 @@ namespace Otlob {
 	using namespace System::Drawing;
     using json = nlohmann::json;
     using namespace msclr::interop;
-  //  using namespace std;
+    using namespace std;
 
 	/// <summary>
 	/// Summary for SignIn
@@ -967,13 +967,13 @@ namespace Otlob {
 		 }
 private: System::Void button_SubmitSI_Click(System::Object^  sender, System::EventArgs^  e) {
 
-       std::ifstream i("Users.json");
+       ifstream i("Users.json");
        json j;
        i >> j;
      String^User_name_input = bunifuMaterialTextbox1->Text;
      String^PassWord_input = Textbox_Password->Text;
-     std:: string UserName = marshal_as<std::string>(User_name_input);//std
-     std::  string PassWord = marshal_as<std::string>(PassWord_input);
+      string UserName = marshal_as<string>(User_name_input);
+      string PassWord = marshal_as<string>(PassWord_input);
     if (j.find(UserName) != j.end())
     {
        if (j[UserName]["Password"] == PassWord)

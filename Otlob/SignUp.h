@@ -14,6 +14,7 @@ namespace Otlob {
 	using namespace System::Drawing;
     using json = nlohmann::json;
     using namespace msclr::interop;
+    using namespace std;
 	/// <summary>
 	/// Summary for SignUp
 	/// </summary>
@@ -1365,17 +1366,17 @@ private: System::Void button_SubmitSU_Click(System::Object^  sender, System::Eve
     String^Year_input = Convert::ToString(bunifuDatepicker1->Value.Year);
 
     // std::string 
-    std::string FirstName = marshal_as<std::string>(FirstName_input);
-    std::string LastName = marshal_as<std::string>(LastName_input);
-    std::string Username = marshal_as<std::string>(Username_input);
-    std::string Email = marshal_as<std::string>(Email_input);
-    std::string Password = marshal_as<std::string>(Password_input);
-    std::string Phone = marshal_as<std::string>(Phone_input);
-    std::string Day = marshal_as<std::string>(Day_input);
-    std::string Month = marshal_as<std::string>(Month_input);
-    std::string Year = marshal_as<std::string>(Year_input);
+    string FirstName = marshal_as<string>(FirstName_input);
+    string LastName = marshal_as<string>(LastName_input);
+    string Username = marshal_as<string>(Username_input);
+    string Email = marshal_as<string>(Email_input);
+    string Password = marshal_as<string>(Password_input);
+    string Phone = marshal_as<string>(Phone_input);
+    string Day = marshal_as<string>(Day_input);
+    string Month = marshal_as<string>(Month_input);
+    string Year = marshal_as<string>(Year_input);
 
-    std::ifstream i("Users.json");
+    ifstream i("Users.json");
        json j;
        i >> j;
        j[Username]["Name"]["First"] = FirstName;
@@ -1387,20 +1388,20 @@ private: System::Void button_SubmitSU_Click(System::Object^  sender, System::Eve
        j[Username]["Date Birth"]["Year"]= Year;
        j[Username]["Phone"] = Phone;
 
-       std::ofstream o("Users.json");
-       o << std::setw(4) << j << std::endl;
-    button_SubmitSU->Enabled = (!(j.find(marshal_as<std::string>(Username_input)) != j.end()));
+       ofstream o("Users.json");
+       o << setw(4) << j << endl;
+    button_SubmitSU->Enabled = (!(j.find(marshal_as<string>(Username_input)) != j.end()));
 
 }
 private: System::Void pictureBox2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void bunifuMaterialTextbox1_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
 
-    std::ifstream i("Users.json");
+    ifstream i("Users.json");
     json j;
     i >> j;
     String^Username_input = bunifuMaterialTextbox1->Text;
-    button_SubmitSU->Enabled = (!(j.find(marshal_as<std::string>(Username_input)) != j.end()));
+    button_SubmitSU->Enabled = (!(j.find(marshal_as<string>(Username_input)) != j.end()));
 }
 };
 }
