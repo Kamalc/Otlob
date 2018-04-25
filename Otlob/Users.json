@@ -27,6 +27,20 @@
         "Password": "ban10ban",
         "Phone": "01091159295"
     },
+    "bros": {
+        "Date Birth": {
+            "Day": "20",
+            "Month": "4",
+            "Year": "2018"
+        },
+        "Email": "bjbcjkasbcks",
+        "Name": {
+            "First": "kamal",
+            "Last": "saad"
+        },
+        "Password": "12345",
+        "Phone": "0101123486451"
+    },
     "bros lee": {
         "Date Birth": {
             "Day": "20",
@@ -40,5 +54,19 @@
         },
         "Password": "123456789",
         "Phone": "01143212327"
+    },
+    "roony6": {
+        "Date Birth": {
+            "Day": "16",
+            "Month": "12",
+            "Year": "1997"
+        },
+        "Email": "roony@gmail.com",
+        "Name": {
+            "First": "Mohamed",
+            "Last": "Mosa"
+        },
+        "Password": "123123",
+        "Phone": "01283921221"
     }
 }

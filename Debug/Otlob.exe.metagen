@@ -1,4 +1,5 @@
   Otlob.Home.resources - Embedded, ContainedInManifestFile, 
+  Otlob.Profile.resources - Embedded, ContainedInManifestFile, 
   Otlob.SignIn.resources - Embedded, ContainedInManifestFile, 
   Otlob.SignUp.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -20,16 +21,27 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 	hash=None, flags=None
 Assembly Microsoft.VisualC.STLCLR, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
-Class Otlob.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Globals.GlobalClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Otlob.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Fields:
+    Boolean LogIn : Public, Static
+    System.String username : Public, Static
+    System.Windows.Forms.Form home : Public, Static
+    System.Windows.Forms.Form signin : Public, Static
+    System.Windows.Forms.Form signup : Public, Static
+    System.Windows.Forms.Form profile : Public, Static
+Class Otlob.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.Home: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class MainMeal: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -82,18 +82,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Food.cpp" />
+    <ClCompile Include="Global.cpp" />
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="MainMeal.cpp" />
+    <ClCompile Include="Profile.cpp" />
     <ClCompile Include="Restaurant.cpp" />
     <ClCompile Include="SignIn.cpp" />
     <ClCompile Include="SignUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Food.h" />
+    <ClInclude Include="Global.h" />
     <ClInclude Include="Home.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainMeal.h" />
+    <ClInclude Include="Profile.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Restaurant.h" />
     <ClInclude Include="SignIn.h">
       <FileType>CppForm</FileType>
@@ -105,6 +111,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.h</DependentUpon>
