@@ -1336,7 +1336,7 @@ private: System::Void button_SubmitSU_Click(System::Object^  sender, System::Eve
     string Month = marshal_as<string>(Month_input);
     string Year = marshal_as<string>(Year_input);
 
-    ifstream i("Users.json");
+       ifstream i("Users.json");
        json j;
        i >> j;
        j[Username]["Name"]["First"] = FirstName;
@@ -1347,7 +1347,7 @@ private: System::Void button_SubmitSU_Click(System::Object^  sender, System::Eve
        j[Username]["Date Birth"]["Month"] = Month;
        j[Username]["Date Birth"]["Year"]= Year;
        j[Username]["Phone"] = Phone;
-
+	   
        ofstream o("Users.json");
        o << setw(4) << j << endl;
     button_SubmitSU->Enabled = (!(j.find(marshal_as<string>(Username_input)) != j.end()));

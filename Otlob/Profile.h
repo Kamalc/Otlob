@@ -12,6 +12,10 @@ namespace Otlob {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using json = nlohmann::json;
+	using namespace msclr::interop;
+	using namespace std;
+
 	using namespace Globals;
 	/// <summary>
 	/// Summary for Profile
@@ -27,7 +31,10 @@ namespace Otlob {
 			//TODO: Add the constructor code here
 			//
 		}
-
+		String^ convert_string_std_to_system(std::string s)
+		{
+			return (gcnew String(s.c_str()));
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -602,6 +609,7 @@ namespace Otlob {
 			this->bunifuDatepicker1->Size = System::Drawing::Size(370, 44);
 			this->bunifuDatepicker1->TabIndex = 24;
 			this->bunifuDatepicker1->Value = System::DateTime(2018, 4, 20, 15, 37, 7, 630);
+			this->bunifuDatepicker1->Visible = false;
 			// 
 			// pictureBox8
 			// 
@@ -662,6 +670,7 @@ namespace Otlob {
 			this->pictureBox10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox10->TabIndex = 22;
 			this->pictureBox10->TabStop = false;
+			this->pictureBox10->Visible = false;
 			// 
 			// pictureBox9
 			// 
@@ -815,6 +824,7 @@ namespace Otlob {
 			this->label12->Size = System::Drawing::Size(118, 25);
 			this->label12->TabIndex = 19;
 			this->label12->Text = L"Date of Birth";
+			this->label12->Visible = false;
 			// 
 			// label11
 			// 
@@ -1017,6 +1027,45 @@ namespace Otlob {
 		}
 #pragma endregion
 	private: System::Void button_SubmitSU_Click(System::Object^  sender, System::EventArgs^  e) {
+
+
+		String^FirstName_input = textBox_FirstName->Text;
+		String^LastName_input = textBox_LastName->Text;
+		String^Username_input = textBox_username->Text;
+		String^Email_input = textBox_Email->Text;
+		String^Password_input = Textbox_Password->Text;
+		String^Phone_input = textBox_Phone->Text;
+/*		String^Day_input = Convert::ToString(bunifuDatepicker1->Value.Day);
+		String^Month_input = Convert::ToString(bunifuDatepicker1->Value.Month);
+		String^Year_input = Convert::ToString(bunifuDatepicker1->Value.Year);*/
+
+		// std::string 
+		string FirstName = marshal_as<string>(FirstName_input);
+		string LastName = marshal_as<string>(LastName_input);
+		string Username = marshal_as<string>(Username_input);
+		string Email = marshal_as<string>(Email_input);
+		string Password = marshal_as<string>(Password_input);
+		string Phone = marshal_as<string>(Phone_input);
+		/*string Day = marshal_as<string>(Day_input);
+		string Month = marshal_as<string>(Month_input);
+		string Year = marshal_as<string>(Year_input);*/
+
+		ifstream i("Users.json");
+		json j;
+		i >> j;
+		j[Username]["Name"]["First"] = FirstName;
+		j[Username]["Name"]["Last"] = LastName;
+		j[Username]["Email"] = Email;
+		j[Username]["Password"] = Password;
+		/*j[Username]["Date Birth"]["Day"] = Day;
+		j[Username]["Date Birth"]["Month"] = Month;
+		j[Username]["Date Birth"]["Year"] = Year;*/
+		j[Username]["Phone"] = Phone;
+
+		ofstream o("Users.json");
+		o << setw(4) << j << endl;
+
+
 	}
 private: System::Void button_Home_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::home->Show();
@@ -1049,7 +1098,32 @@ private: System::Void button_Close_Click(System::Object^  sender, System::EventA
 	this->dragging = false;
 	}
 	private: System::Void panel3_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	
+		ifstream i("Users.json");
+		json j;
+		i >> j;
+		String ^User_name_system = GlobalClass::username;
+		string Username = marshal_as<string>(User_name_system);
+		String^First =convert_string_std_to_system(j[Username]["Name"]["First"]);
+		String^Last= convert_string_std_to_system(j[Username]["Name"]["Last"]);
+		String^Email= convert_string_std_to_system(j[Username]["Email"]);
+		String^Password= convert_string_std_to_system(j[Username]["Password"]);
+/*		String^ Day= convert_string_std_to_system(j[Username]["Date Birth"]["Day"]);
+		String^ Month= convert_string_std_to_system(j[Username]["Date Birth"]["Month"]) ;
+		String^ Year= convert_string_std_to_system(j[Username]["Date Birth"]["Year"]);*/
+		String^ Phone= convert_string_std_to_system(j[Username]["Phone"]);
+		
+		textBox_username->Text = GlobalClass::username;
+		textBox_FirstName->Text = First;
+		textBox_LastName->Text = Last;
+		textBox_Email->Text = Email;
+		Textbox_Password->Text = Password;
+
+		textBox_Phone->Text = Phone;
+		
 		
 	}
+
+
 };
 }
