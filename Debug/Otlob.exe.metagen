@@ -1,5 +1,7 @@
   Otlob.Home.resources - Embedded, ContainedInManifestFile, 
+  Otlob.OrderFood.resources - Embedded, ContainedInManifestFile, 
   Otlob.Profile.resources - Embedded, ContainedInManifestFile, 
+  Otlob.ShowRestaurants.resources - Embedded, ContainedInManifestFile, 
   Otlob.SignIn.resources - Embedded, ContainedInManifestFile, 
   Otlob.SignUp.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -30,6 +32,8 @@ Class Globals.GlobalClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Windows.Forms.Form signin : Public, Static
     System.Windows.Forms.Form signup : Public, Static
     System.Windows.Forms.Form profile : Public, Static
+    System.Windows.Forms.Form showRestaurant : Public, Static
+    System.Windows.Forms.Form order : Public, Static
 Class Otlob.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -38,12 +42,16 @@ Class Otlob.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Otlob.Home: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class MainMeal: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.ShowRestaurants: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.OrderFood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

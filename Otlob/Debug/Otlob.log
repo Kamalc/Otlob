@@ -1,5 +1,12 @@
-﻿  Home.cpp
+﻿  Global.cpp
+  Home.cpp
+d:\oo\otlob\otlob\ShowRestaurants.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  OrderFood.cpp
   Profile.cpp
+  ShowRestaurants.cpp
+d:\oo\otlob\otlob\ShowRestaurants.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  SignIn.cpp
+  SignUp.cpp
   Generating Code...
   Otlob.vcxproj -> D:\OO\Otlob\Debug\Otlob.exe
   Otlob.vcxproj -> D:\OO\Otlob\Debug\Otlob.pdb (Full PDB)

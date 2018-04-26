@@ -96,6 +96,7 @@ namespace Otlob {
 
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  textBox_LastName;
 	private: System::Windows::Forms::Label^  label_SignUp;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 
 	private:
 		/// <summary>
@@ -154,6 +155,7 @@ namespace Otlob {
 			this->textBox_username = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->textBox_LastName = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->label_SignUp = (gcnew System::Windows::Forms::Label());
+			this->button_SignOut = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->panel1->SuspendLayout();
 			this->Panel_Header->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -174,6 +176,7 @@ namespace Otlob {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->panel1->Controls->Add(this->button_SignOut);
 			this->panel1->Controls->Add(this->label_Username);
 			this->panel1->Controls->Add(this->label_UsernameN);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
@@ -987,6 +990,47 @@ namespace Otlob {
 			this->label_SignUp->Size = System::Drawing::Size(167, 50);
 			this->label_SignUp->TabIndex = 16;
 			this->label_SignUp->Text = L"Profile";
+			// 
+			// button_SignOut
+			// 
+			this->button_SignOut->Activecolor = System::Drawing::Color::Maroon;
+			this->button_SignOut->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button_SignOut->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button_SignOut->BorderRadius = 0;
+			this->button_SignOut->ButtonText = L"Sign Out";
+			this->button_SignOut->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_SignOut->DisabledColor = System::Drawing::Color::Transparent;
+			this->button_SignOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button_SignOut->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->button_SignOut->Iconcolor = System::Drawing::Color::Transparent;
+			this->button_SignOut->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_SignOut.Iconimage")));
+			this->button_SignOut->Iconimage_right = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_SignOut.Iconimage_right")));
+			this->button_SignOut->Iconimage_right_Selected = nullptr;
+			this->button_SignOut->Iconimage_Selected = nullptr;
+			this->button_SignOut->IconMarginLeft = 0;
+			this->button_SignOut->IconMarginRight = 0;
+			this->button_SignOut->IconRightVisible = true;
+			this->button_SignOut->IconRightZoom = 70;
+			this->button_SignOut->IconVisible = true;
+			this->button_SignOut->IconZoom = 90;
+			this->button_SignOut->IsTab = false;
+			this->button_SignOut->Location = System::Drawing::Point(363, -1);
+			this->button_SignOut->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_SignOut->Name = L"button_SignOut";
+			this->button_SignOut->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button_SignOut->OnHovercolor = System::Drawing::Color::AntiqueWhite;
+			this->button_SignOut->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button_SignOut->selected = false;
+			this->button_SignOut->Size = System::Drawing::Size(234, 58);
+			this->button_SignOut->TabIndex = 14;
+			this->button_SignOut->Text = L"Sign Out";
+			this->button_SignOut->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
+				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
 			// 
 			// Profile
 			// 

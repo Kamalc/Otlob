@@ -81,26 +81,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Food.cpp" />
+    <ClCompile Include="AdminForm.cpp" />
+    <ClCompile Include="AdminFormLogIn.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Home.cpp" />
-    <ClCompile Include="MainMeal.cpp" />
+    <ClCompile Include="OrderFood.cpp" />
     <ClCompile Include="Profile.cpp" />
-    <ClCompile Include="Restaurant.cpp" />
+    <ClCompile Include="ShowRestaurants.cpp" />
     <ClCompile Include="SignIn.cpp" />
     <ClCompile Include="SignUp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Food.h" />
+    <ClInclude Include="AdminForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AdminFormLogIn.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Global.h" />
     <ClInclude Include="Home.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MainMeal.h" />
+    <ClInclude Include="OrderFood.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Profile.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Restaurant.h" />
+    <ClInclude Include="ShowRestaurants.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SignIn.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -109,11 +119,23 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminFormLogIn.resx">
+      <DependentUpon>AdminFormLogIn.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderFood.resx">
+      <DependentUpon>OrderFood.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowRestaurants.resx">
+      <DependentUpon>ShowRestaurants.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.h</DependentUpon>

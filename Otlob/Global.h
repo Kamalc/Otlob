@@ -10,7 +10,11 @@ namespace Globals
 	public: static Form^ home;
 	public: static Form^ signin;
 	public: static Form^ signup;
-	public: static Form ^profile;
+	public: static Form^ profile;
+	public: static Form^ showRestaurant;
+	public: static Form^ order;
+	public: static Form^ AdminFormLogIn;
+	public: static Form^ AdminForm;
 	};
 }
 

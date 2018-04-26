@@ -22,12 +22,13 @@ namespace Otlob {
 			InitializeComponent();
 			this->dragging = false;
 			GlobalClass::home = this;
-			if (GlobalClass::LogIn == true) {
+			if (GlobalClass::LogIn) {
 				label_UsernameN->Visible = true;
 				button_SignIn->Visible = false;
 				Button_SignUp->Visible = false;
 				label_Username->Text = GlobalClass::username;
 				Button_Profile->Visible = true;
+				button_SignOut->Visible = true;
 			}			//GlobalClass::profile = p;
 			//
 			//TODO: Add the constructor code here
@@ -126,6 +127,8 @@ namespace Otlob {
 	private: System::Windows::Forms::PictureBox^  pictureBox15;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton5;
 private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
+private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
+
 
 
 
@@ -173,6 +176,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 			this->button_Close = (gcnew System::Windows::Forms::Button());
 			this->button_Minimize = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button_SignOut = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->label_Username = (gcnew System::Windows::Forms::Label());
 			this->label_UsernameN = (gcnew System::Windows::Forms::Label());
 			this->Button_Profile = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
@@ -307,6 +311,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 			this->bunifuFlatButton5->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->bunifuFlatButton5->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->bunifuFlatButton5->Click += gcnew System::EventHandler(this, &Home::bunifuFlatButton5_Click);
 			// 
 			// bunifuFlatButton1
 			// 
@@ -628,6 +633,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->panel1->Controls->Add(this->button_SignOut);
 			this->panel1->Controls->Add(this->label_Username);
 			this->panel1->Controls->Add(this->label_UsernameN);
 			this->panel1->Controls->Add(this->button_SignIn);
@@ -641,6 +647,47 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 			this->panel1->Size = System::Drawing::Size(960, 56);
 			this->panel1->TabIndex = 9;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Home::panel1_Paint);
+			// 
+			// button_SignOut
+			// 
+			this->button_SignOut->Activecolor = System::Drawing::Color::Maroon;
+			this->button_SignOut->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button_SignOut->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button_SignOut->BorderRadius = 0;
+			this->button_SignOut->ButtonText = L"Sign Out";
+			this->button_SignOut->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_SignOut->DisabledColor = System::Drawing::Color::Transparent;
+			this->button_SignOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button_SignOut->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->button_SignOut->Iconcolor = System::Drawing::Color::Transparent;
+			this->button_SignOut->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_SignOut.Iconimage")));
+			this->button_SignOut->Iconimage_right = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_SignOut.Iconimage_right")));
+			this->button_SignOut->Iconimage_right_Selected = nullptr;
+			this->button_SignOut->Iconimage_Selected = nullptr;
+			this->button_SignOut->IconMarginLeft = 0;
+			this->button_SignOut->IconMarginRight = 0;
+			this->button_SignOut->IconRightVisible = true;
+			this->button_SignOut->IconRightZoom = 70;
+			this->button_SignOut->IconVisible = true;
+			this->button_SignOut->IconZoom = 90;
+			this->button_SignOut->IsTab = false;
+			this->button_SignOut->Location = System::Drawing::Point(66, -1);
+			this->button_SignOut->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_SignOut->Name = L"button_SignOut";
+			this->button_SignOut->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button_SignOut->OnHovercolor = System::Drawing::Color::AntiqueWhite;
+			this->button_SignOut->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button_SignOut->selected = false;
+			this->button_SignOut->Size = System::Drawing::Size(234, 58);
+			this->button_SignOut->TabIndex = 13;
+			this->button_SignOut->Text = L"Sign Out";
+			this->button_SignOut->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
+				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
 			// 
 			// label_Username
 			// 
@@ -1175,6 +1222,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 			this->Button_ShowRs->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->Button_ShowRs->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->Button_ShowRs->Click += gcnew System::EventHandler(this, &Home::Button_ShowRs_Click);
 			// 
 			// comboBox2
 			// 
@@ -1202,6 +1250,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 			this->comboBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Cairo", L"Alexandria" });
 			this->comboBox1->Location = System::Drawing::Point(75, 352);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(227, 34);
@@ -1317,6 +1366,14 @@ private: System::Void panel1_Paint(System::Object^  sender, System::Windows::For
 		Button_SignUp->Visible = false;
 		label_Username->Text = GlobalClass::username;
 	}
+}
+private: System::Void Button_ShowRs_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::showRestaurant->Show();
+	this->Hide();
+}
+private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::AdminFormLogIn->Show();
+	this->Hide();
 }
 };
 }
