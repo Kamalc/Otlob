@@ -1,3 +1,5 @@
+  Otlob.AdminForm.resources - Embedded, ContainedInManifestFile, 
+  Otlob.AdminFormLogIn.resources - Embedded, ContainedInManifestFile, 
   Otlob.Home.resources - Embedded, ContainedInManifestFile, 
   Otlob.OrderFood.resources - Embedded, ContainedInManifestFile, 
   Otlob.Profile.resources - Embedded, ContainedInManifestFile, 
@@ -34,6 +36,11 @@ Class Globals.GlobalClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Windows.Forms.Form profile : Public, Static
     System.Windows.Forms.Form showRestaurant : Public, Static
     System.Windows.Forms.Form order : Public, Static
+    System.Windows.Forms.Form AdminFormLogIn : Public, Static
+    System.Windows.Forms.Form AdminForm : Public, Static
+Class Otlob.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -53,5 +60,8 @@ Class Otlob.ShowRestaurants: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.OrderFood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.AdminFormLogIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

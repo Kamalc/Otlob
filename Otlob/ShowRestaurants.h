@@ -132,6 +132,7 @@ namespace Otlob {
 			this->bunifuGradientPanel2 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
 			this->bunifuGradientPanel1 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Button_Profile = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->button_SignOut = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->label_Username = (gcnew System::Windows::Forms::Label());
 			this->label_UsernameN = (gcnew System::Windows::Forms::Label());
@@ -149,7 +150,6 @@ namespace Otlob {
 			this->bunifuFlatButton3 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->bunifuFlatButton2 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->Button_Profile = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->panel3->SuspendLayout();
 			this->flowPanelRestaurants->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -370,6 +370,49 @@ namespace Otlob {
 			this->panel1->TabIndex = 17;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ShowRestaurants::panel1_Paint);
 			// 
+			// Button_Profile
+			// 
+			this->Button_Profile->Activecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->Button_Profile->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->Button_Profile->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Button_Profile->BorderRadius = 0;
+			this->Button_Profile->ButtonText = L"Profile";
+			this->Button_Profile->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Button_Profile->DisabledColor = System::Drawing::Color::Gray;
+			this->Button_Profile->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Button_Profile->ForeColor = System::Drawing::Color::Tan;
+			this->Button_Profile->Iconcolor = System::Drawing::Color::Transparent;
+			this->Button_Profile->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Button_Profile.Iconimage")));
+			this->Button_Profile->Iconimage_right = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Button_Profile.Iconimage_right")));
+			this->Button_Profile->Iconimage_right_Selected = nullptr;
+			this->Button_Profile->Iconimage_Selected = nullptr;
+			this->Button_Profile->IconMarginLeft = 0;
+			this->Button_Profile->IconMarginRight = 0;
+			this->Button_Profile->IconRightVisible = false;
+			this->Button_Profile->IconRightZoom = 0;
+			this->Button_Profile->IconVisible = true;
+			this->Button_Profile->IconZoom = 70;
+			this->Button_Profile->IsTab = false;
+			this->Button_Profile->Location = System::Drawing::Point(550, -1);
+			this->Button_Profile->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Button_Profile->Name = L"Button_Profile";
+			this->Button_Profile->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->Button_Profile->OnHovercolor = System::Drawing::Color::AntiqueWhite;
+			this->Button_Profile->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
+			this->Button_Profile->selected = false;
+			this->Button_Profile->Size = System::Drawing::Size(156, 58);
+			this->Button_Profile->TabIndex = 13;
+			this->Button_Profile->Text = L"Profile";
+			this->Button_Profile->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Button_Profile->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
+				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->Button_Profile->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->Button_Profile->Visible = false;
+			// 
 			// button_SignOut
 			// 
 			this->button_SignOut->Activecolor = System::Drawing::Color::Maroon;
@@ -410,6 +453,7 @@ namespace Otlob {
 			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignOut->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_SignOut_Click);
 			// 
 			// label_Username
 			// 
@@ -855,49 +899,6 @@ namespace Otlob {
 			this->label2->TabIndex = 10;
 			this->label2->Text = L"OTlob";
 			// 
-			// Button_Profile
-			// 
-			this->Button_Profile->Activecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->Button_Profile->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->Button_Profile->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Button_Profile->BorderRadius = 0;
-			this->Button_Profile->ButtonText = L"Profile";
-			this->Button_Profile->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Button_Profile->DisabledColor = System::Drawing::Color::Gray;
-			this->Button_Profile->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Button_Profile->ForeColor = System::Drawing::Color::Tan;
-			this->Button_Profile->Iconcolor = System::Drawing::Color::Transparent;
-			this->Button_Profile->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Button_Profile.Iconimage")));
-			this->Button_Profile->Iconimage_right = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Button_Profile.Iconimage_right")));
-			this->Button_Profile->Iconimage_right_Selected = nullptr;
-			this->Button_Profile->Iconimage_Selected = nullptr;
-			this->Button_Profile->IconMarginLeft = 0;
-			this->Button_Profile->IconMarginRight = 0;
-			this->Button_Profile->IconRightVisible = false;
-			this->Button_Profile->IconRightZoom = 0;
-			this->Button_Profile->IconVisible = true;
-			this->Button_Profile->IconZoom = 70;
-			this->Button_Profile->IsTab = false;
-			this->Button_Profile->Location = System::Drawing::Point(550, -1);
-			this->Button_Profile->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
-			this->Button_Profile->Name = L"Button_Profile";
-			this->Button_Profile->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->Button_Profile->OnHovercolor = System::Drawing::Color::AntiqueWhite;
-			this->Button_Profile->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
-			this->Button_Profile->selected = false;
-			this->Button_Profile->Size = System::Drawing::Size(156, 58);
-			this->Button_Profile->TabIndex = 13;
-			this->Button_Profile->Text = L"Profile";
-			this->Button_Profile->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->Button_Profile->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->Button_Profile->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-			this->Button_Profile->Visible = false;
-			// 
 			// ShowRestaurants
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -994,6 +995,12 @@ private: System::Void bunifuGradientPanel1_Paint(System::Object^  sender, System
 private: System::Void panel2_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 }
 private: System::Void button_Home_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::home->Show();
+	this->Hide();
+}
+private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::LogIn = false;
+	GlobalClass::username = "";
 	GlobalClass::home->Show();
 	this->Hide();
 }

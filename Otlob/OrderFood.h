@@ -221,7 +221,7 @@ namespace Otlob {
 			this->bunifuFlatButton6->IconZoom = 90;
 			this->bunifuFlatButton6->IsTab = false;
 			this->bunifuFlatButton6->Location = System::Drawing::Point(50, 514);
-			this->bunifuFlatButton6->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->bunifuFlatButton6->Margin = System::Windows::Forms::Padding(6);
 			this->bunifuFlatButton6->Name = L"bunifuFlatButton6";
 			this->bunifuFlatButton6->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -275,7 +275,7 @@ namespace Otlob {
 			this->bunifuFlatButton5->IconZoom = 90;
 			this->bunifuFlatButton5->IsTab = false;
 			this->bunifuFlatButton5->Location = System::Drawing::Point(352, 514);
-			this->bunifuFlatButton5->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->bunifuFlatButton5->Margin = System::Windows::Forms::Padding(6);
 			this->bunifuFlatButton5->Name = L"bunifuFlatButton5";
 			this->bunifuFlatButton5->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -439,19 +439,22 @@ namespace Otlob {
 			this->bunifuGradientPanel3->Location = System::Drawing::Point(0, 27);
 			this->bunifuGradientPanel3->Name = L"bunifuGradientPanel3";
 			this->bunifuGradientPanel3->Quality = 10;
-			this->bunifuGradientPanel3->Size = System::Drawing::Size(872, 32);
+			this->bunifuGradientPanel3->Size = System::Drawing::Size(872, 34);
 			this->bunifuGradientPanel3->TabIndex = 1;
 			// 
 			// bunifuRating1
 			// 
+			this->bunifuRating1->AutoSize = true;
 			this->bunifuRating1->BackColor = System::Drawing::Color::Transparent;
 			this->bunifuRating1->Dock = System::Windows::Forms::DockStyle::Right;
 			this->bunifuRating1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuRating1->Location = System::Drawing::Point(650, 0);
+			this->bunifuRating1->Location = System::Drawing::Point(621, 0);
 			this->bunifuRating1->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
+			this->bunifuRating1->MaximumSize = System::Drawing::Size(251, 34);
+			this->bunifuRating1->MinimumSize = System::Drawing::Size(251, 34);
 			this->bunifuRating1->Name = L"bunifuRating1";
-			this->bunifuRating1->Size = System::Drawing::Size(222, 32);
+			this->bunifuRating1->Size = System::Drawing::Size(251, 34);
 			this->bunifuRating1->TabIndex = 1;
 			this->bunifuRating1->Value = 0;
 			// 
@@ -625,6 +628,7 @@ namespace Otlob {
 			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignOut->Click += gcnew System::EventHandler(this, &OrderFood::button_SignOut_Click);
 			// 
 			// Button_SignUp
 			// 
@@ -1039,6 +1043,12 @@ namespace Otlob {
 		Application::Exit();
 	}
 private: System::Void button_Home_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::home->Show();
+	this->Hide();
+}
+private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::LogIn = false;
+	GlobalClass::username = "";
 	GlobalClass::home->Show();
 	this->Hide();
 }
