@@ -21,6 +21,14 @@ namespace Otlob {
 		OrderFood(void)
 		{
 			InitializeComponent();
+			if (GlobalClass::LogIn) {
+				label_UsernameN->Visible = true;
+				button_SignIn->Visible = false;
+				Button_SignUp->Visible = false;
+				label_Username->Text = GlobalClass::username;
+				Button_Profile->Visible = true;
+				button_SignOut->Visible = true;
+			}
 			//
 			//TODO: Add the constructor code here
 			//
@@ -78,6 +86,7 @@ namespace Otlob {
 	private: Bunifu::Framework::UI::BunifuImageButton^  bunifuImageButton1;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton5;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 
 
 
@@ -140,6 +149,7 @@ namespace Otlob {
 			this->bunifuRating1 = (gcnew Bunifu::Framework::UI::BunifuRating());
 			this->label_RestaurantName = (gcnew System::Windows::Forms::Label());
 			this->bunifuGradientPanel2 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
+			this->Button_Profile = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->bunifuGradientPanel1 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label_Username = (gcnew System::Windows::Forms::Label());
@@ -487,6 +497,50 @@ namespace Otlob {
 			this->bunifuGradientPanel2->Size = System::Drawing::Size(872, 27);
 			this->bunifuGradientPanel2->TabIndex = 1;
 			// 
+			// Button_Profile
+			// 
+			this->Button_Profile->Activecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->Button_Profile->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->Button_Profile->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Button_Profile->BorderRadius = 0;
+			this->Button_Profile->ButtonText = L"Profile";
+			this->Button_Profile->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Button_Profile->DisabledColor = System::Drawing::Color::Gray;
+			this->Button_Profile->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Button_Profile->ForeColor = System::Drawing::Color::Tan;
+			this->Button_Profile->Iconcolor = System::Drawing::Color::Transparent;
+			this->Button_Profile->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Button_Profile.Iconimage")));
+			this->Button_Profile->Iconimage_right = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Button_Profile.Iconimage_right")));
+			this->Button_Profile->Iconimage_right_Selected = nullptr;
+			this->Button_Profile->Iconimage_Selected = nullptr;
+			this->Button_Profile->IconMarginLeft = 0;
+			this->Button_Profile->IconMarginRight = 0;
+			this->Button_Profile->IconRightVisible = false;
+			this->Button_Profile->IconRightZoom = 0;
+			this->Button_Profile->IconVisible = true;
+			this->Button_Profile->IconZoom = 70;
+			this->Button_Profile->IsTab = false;
+			this->Button_Profile->Location = System::Drawing::Point(550, -1);
+			this->Button_Profile->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Button_Profile->Name = L"Button_Profile";
+			this->Button_Profile->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->Button_Profile->OnHovercolor = System::Drawing::Color::AntiqueWhite;
+			this->Button_Profile->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
+			this->Button_Profile->selected = false;
+			this->Button_Profile->Size = System::Drawing::Size(156, 58);
+			this->Button_Profile->TabIndex = 10;
+			this->Button_Profile->Text = L"Profile";
+			this->Button_Profile->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Button_Profile->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
+				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->Button_Profile->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->Button_Profile->Visible = false;
+			this->Button_Profile->Click += gcnew System::EventHandler(this, &OrderFood::Button_Profile_Click);
+			// 
 			// bunifuGradientPanel1
 			// 
 			this->bunifuGradientPanel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuGradientPanel1.BackgroundImage")));
@@ -510,6 +564,7 @@ namespace Otlob {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->panel1->Controls->Add(this->Button_Profile);
 			this->panel1->Controls->Add(this->label_Username);
 			this->panel1->Controls->Add(this->label_UsernameN);
 			this->panel1->Controls->Add(this->button_SignIn);
@@ -587,6 +642,7 @@ namespace Otlob {
 			this->button_SignIn->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignIn->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignIn->Click += gcnew System::EventHandler(this, &OrderFood::button_SignIn_Click);
 			// 
 			// button_SignOut
 			// 
@@ -628,6 +684,7 @@ namespace Otlob {
 			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignOut->Visible = false;
 			this->button_SignOut->Click += gcnew System::EventHandler(this, &OrderFood::button_SignOut_Click);
 			// 
 			// Button_SignUp
@@ -670,6 +727,7 @@ namespace Otlob {
 			this->Button_SignUp->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->Button_SignUp->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->Button_SignUp->Click += gcnew System::EventHandler(this, &OrderFood::Button_SignUp_Click);
 			// 
 			// Panel_Header
 			// 
@@ -716,6 +774,7 @@ namespace Otlob {
 			this->button_Minimize->TabIndex = 2;
 			this->button_Minimize->Text = L"_";
 			this->button_Minimize->UseVisualStyleBackColor = false;
+			this->button_Minimize->Click += gcnew System::EventHandler(this, &OrderFood::button_Minimize_Click);
 			// 
 			// panel2
 			// 
@@ -784,6 +843,7 @@ namespace Otlob {
 			this->button_AdminRoom->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AdminRoom->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_AdminRoom->Click += gcnew System::EventHandler(this, &OrderFood::button_AdminRoom_Click);
 			// 
 			// button_Home
 			// 
@@ -1050,6 +1110,25 @@ private: System::Void button_SignOut_Click(System::Object^  sender, System::Even
 	GlobalClass::LogIn = false;
 	GlobalClass::username = "";
 	GlobalClass::home->Show();
+	this->Hide();
+}
+private: System::Void button_Minimize_Click(System::Object^  sender, System::EventArgs^  e) {
+	WindowState = FormWindowState::Minimized;
+}
+private: System::Void button_AdminRoom_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::AdminFormLogIn->Show();
+	this->Hide();
+}
+private: System::Void Button_Profile_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::profile->Show();
+	this->Hide();
+}
+private: System::Void button_SignIn_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::signin->Show();
+	this->Hide();
+}
+private: System::Void Button_SignUp_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::signup->Show();
 	this->Hide();
 }
 };

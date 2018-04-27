@@ -688,6 +688,8 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignOut->Visible = false;
+			this->button_SignOut->Click += gcnew System::EventHandler(this, &Home::button_SignOut_Click);
 			// 
 			// label_Username
 			// 
@@ -1374,6 +1376,10 @@ private: System::Void Button_ShowRs_Click(System::Object^  sender, System::Event
 private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::AdminFormLogIn->Show();
 	this->Hide();
+}
+private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::username = "";
+	GlobalClass::LogIn = false;
 }
 };
 }

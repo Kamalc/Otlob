@@ -228,6 +228,7 @@ namespace Otlob {
 			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignOut->Visible = false;
 			this->button_SignOut->Click += gcnew System::EventHandler(this, &Profile::button_SignOut_Click);
 			// 
 			// label_Username
@@ -374,6 +375,7 @@ namespace Otlob {
 			this->button_AdminRoom->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AdminRoom->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_AdminRoom->Click += gcnew System::EventHandler(this, &Profile::button_AdminRoom_Click);
 			// 
 			// button_Home
 			// 
@@ -1174,6 +1176,10 @@ private: System::Void button_SignOut_Click(System::Object^  sender, System::Even
 	GlobalClass::LogIn = false;
 	GlobalClass::username = "";
 	GlobalClass::home->Show();
+	this->Hide();
+}
+private: System::Void button_AdminRoom_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::AdminFormLogIn->Show();
 	this->Hide();
 }
 };

@@ -310,6 +310,7 @@ namespace Otlob {
 			this->button_Minimize->TabIndex = 2;
 			this->button_Minimize->Text = L"_";
 			this->button_Minimize->UseVisualStyleBackColor = false;
+			this->button_Minimize->Click += gcnew System::EventHandler(this, &AdminForm::button_Minimize_Click);
 			// 
 			// panel2
 			// 
@@ -558,6 +559,9 @@ namespace Otlob {
 private: System::Void button_AdminRoom_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::home->Show();
 	this->Hide();
+}
+private: System::Void button_Minimize_Click(System::Object^  sender, System::EventArgs^  e) {
+	WindowState = FormWindowState::Minimized;
 }
 };
 }

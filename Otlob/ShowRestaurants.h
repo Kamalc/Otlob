@@ -412,6 +412,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->Button_Profile->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
 			this->Button_Profile->Visible = false;
+			this->Button_Profile->Click += gcnew System::EventHandler(this, &ShowRestaurants::Button_Profile_Click);
 			// 
 			// button_SignOut
 			// 
@@ -453,6 +454,7 @@ namespace Otlob {
 			this->button_SignOut->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignOut->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignOut->Visible = false;
 			this->button_SignOut->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_SignOut_Click);
 			// 
 			// label_Username
@@ -519,6 +521,7 @@ namespace Otlob {
 			this->button_SignIn->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_SignIn->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_SignIn->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_SignIn_Click);
 			// 
 			// Button_SignUp
 			// 
@@ -561,6 +564,7 @@ namespace Otlob {
 			this->Button_SignUp->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->Button_SignUp->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->Button_SignUp->Click += gcnew System::EventHandler(this, &ShowRestaurants::Button_SignUp_Click);
 			// 
 			// Panel_Header
 			// 
@@ -677,6 +681,7 @@ namespace Otlob {
 			this->button_AdminRoom->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AdminRoom->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
+			this->button_AdminRoom->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_AdminRoom_Click);
 			// 
 			// button_Home
 			// 
@@ -1002,6 +1007,22 @@ private: System::Void button_SignOut_Click(System::Object^  sender, System::Even
 	GlobalClass::LogIn = false;
 	GlobalClass::username = "";
 	GlobalClass::home->Show();
+	this->Hide();
+}
+private: System::Void button_AdminRoom_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::AdminFormLogIn->Show();
+	this->Hide();
+}
+private: System::Void Button_Profile_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::profile->Show();
+	this->Hide();
+}
+private: System::Void button_SignIn_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::signin->Show();
+	this->Hide();
+}
+private: System::Void Button_SignUp_Click(System::Object^  sender, System::EventArgs^  e) {
+	GlobalClass::signup->Show();
 	this->Hide();
 }
 };
