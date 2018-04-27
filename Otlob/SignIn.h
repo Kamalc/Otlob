@@ -5,6 +5,7 @@
 #include <msclr\marshal_cppstd.h>
 #include <cstdlib>
 #include "Global.h"
+#include"User.h"
 namespace Otlob {
 
 	using namespace System;
@@ -913,35 +914,18 @@ namespace Otlob {
 		this->Hide();
 		 }
 private: System::Void button_SubmitSI_Click(System::Object^  sender, System::EventArgs^  e) {
-
-       ifstream i("Users.json");
-       json j;
-       i >> j;
-     String^User_name_input = TextBox_Username->Text;
-     String^PassWord_input = Textbox_Password->Text;
-      string UserName = marshal_as<string>(User_name_input);
-      string PassWord = marshal_as<string>(PassWord_input);
-    if (j.find(UserName) != j.end())
+    User^ sign;
+    String^return_val = sign->SignIn(TextBox_Username->Text, Textbox_Password->Text);
+    if (return_val == "LogIn")
     {
-       if (j[UserName]["Password"] == PassWord)
-       {
-		   GlobalClass::LogIn = true;
-		   GlobalClass::username = User_name_input;
-		   if (GlobalClass::LogIn == true) {
-			   button_SignIn->Visible = false;
-			   Button_SignUp->Visible = false;
-		   }
-		   GlobalClass::home->Show();
-		   this->Hide();
-	   }
-       else
-       {
-           MessageBox::Show("Invalid password", "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Asterisk);
-       }
+        TextBox_Username->Text = "";
+        Textbox_Password->Text = "";
+        GlobalClass::home->Show();
+        this->Hide();
     }
     else
     {
-        MessageBox::Show("Invalid User Name", "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Asterisk);
+        MessageBox::Show(return_val, "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Asterisk);
     }
 }
 private: System::Void Textbox_Password_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
