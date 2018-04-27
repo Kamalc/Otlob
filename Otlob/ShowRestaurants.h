@@ -292,22 +292,22 @@ namespace Otlob {
 			// label_Address
 			// 
 			this->label_Address->AutoSize = true;
-			this->label_Address->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_Address->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label_Address->Location = System::Drawing::Point(462, 13);
 			this->label_Address->Name = L"label_Address";
-			this->label_Address->Size = System::Drawing::Size(102, 29);
+			this->label_Address->Size = System::Drawing::Size(109, 29);
 			this->label_Address->TabIndex = 0;
 			this->label_Address->Text = L"Address";
 			// 
 			// label_Location
 			// 
 			this->label_Location->AutoSize = true;
-			this->label_Location->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_Location->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label_Location->Location = System::Drawing::Point(211, 13);
 			this->label_Location->Name = L"label_Location";
-			this->label_Location->Size = System::Drawing::Size(104, 29);
+			this->label_Location->Size = System::Drawing::Size(112, 29);
 			this->label_Location->TabIndex = 0;
 			this->label_Location->Text = L"Location";
 			// 
@@ -470,13 +470,15 @@ namespace Otlob {
 			// label_UsernameN
 			// 
 			this->label_UsernameN->AutoSize = true;
+			this->label_UsernameN->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_UsernameN->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->label_UsernameN->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label_UsernameN.Image")));
 			this->label_UsernameN->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label_UsernameN->Location = System::Drawing::Point(709, 18);
 			this->label_UsernameN->Name = L"label_UsernameN";
-			this->label_UsernameN->Size = System::Drawing::Size(110, 25);
+			this->label_UsernameN->Size = System::Drawing::Size(120, 25);
 			this->label_UsernameN->TabIndex = 0;
 			this->label_UsernameN->Text = L"username :";
 			this->label_UsernameN->Visible = false;
@@ -533,7 +535,6 @@ namespace Otlob {
 			this->Button_SignUp->ButtonText = L"Sign Up";
 			this->Button_SignUp->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Button_SignUp->DisabledColor = System::Drawing::Color::Transparent;
-			this->Button_SignUp->Enabled = false;
 			this->Button_SignUp->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Button_SignUp->ForeColor = System::Drawing::Color::CornflowerBlue;
@@ -992,6 +993,22 @@ private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::E
 private: System::Void Panel_Header_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 }
 private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	if (GlobalClass::LogIn) {
+		label_UsernameN->Visible = true;
+		button_SignIn->Visible = false;
+		Button_SignUp->Visible = false;
+		label_Username->Text = GlobalClass::username;
+		Button_Profile->Visible = true;
+		button_SignOut->Visible = true;
+	}
+	else {
+		label_UsernameN->Visible = false;
+		button_SignIn->Visible = true;
+		Button_SignUp->Visible = true;
+		label_Username->Text = GlobalClass::username;
+		Button_Profile->Visible = false;
+		button_SignOut->Visible = false;
+	}
 }
 private: System::Void bunifuGradientPanel2_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 }

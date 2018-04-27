@@ -1,4 +1,18 @@
 {
+    "": {
+        "Date Birth": {
+            "Day": "20",
+            "Month": "4",
+            "Year": "2018"
+        },
+        "Email": "",
+        "Name": {
+            "First": "",
+            "Last": ""
+        },
+        "Password": "",
+        "Phone": ""
+    },
     "EntaMalOmk": {
         "Date Birth": {
             "Day": "20",

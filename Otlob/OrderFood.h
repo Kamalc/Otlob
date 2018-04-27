@@ -149,8 +149,8 @@ namespace Otlob {
 			this->bunifuRating1 = (gcnew Bunifu::Framework::UI::BunifuRating());
 			this->label_RestaurantName = (gcnew System::Windows::Forms::Label());
 			this->bunifuGradientPanel2 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
-			this->Button_Profile = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->bunifuGradientPanel1 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
+			this->Button_Profile = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label_Username = (gcnew System::Windows::Forms::Label());
 			this->label_UsernameN = (gcnew System::Windows::Forms::Label());
@@ -471,10 +471,12 @@ namespace Otlob {
 			// label_RestaurantName
 			// 
 			this->label_RestaurantName->AutoSize = true;
+			this->label_RestaurantName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_RestaurantName->ForeColor = System::Drawing::Color::Maroon;
 			this->label_RestaurantName->Location = System::Drawing::Point(271, 3);
 			this->label_RestaurantName->Name = L"label_RestaurantName";
-			this->label_RestaurantName->Size = System::Drawing::Size(158, 25);
+			this->label_RestaurantName->Size = System::Drawing::Size(172, 25);
 			this->label_RestaurantName->TabIndex = 0;
 			this->label_RestaurantName->Text = L"RestaurantName";
 			// 
@@ -496,6 +498,25 @@ namespace Otlob {
 			this->bunifuGradientPanel2->Quality = 10;
 			this->bunifuGradientPanel2->Size = System::Drawing::Size(872, 27);
 			this->bunifuGradientPanel2->TabIndex = 1;
+			// 
+			// bunifuGradientPanel1
+			// 
+			this->bunifuGradientPanel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuGradientPanel1.BackgroundImage")));
+			this->bunifuGradientPanel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->bunifuGradientPanel1->Dock = System::Windows::Forms::DockStyle::Right;
+			this->bunifuGradientPanel1->GradientBottomLeft = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->bunifuGradientPanel1->GradientBottomRight = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuGradientPanel1->GradientTopLeft = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->bunifuGradientPanel1->GradientTopRight = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuGradientPanel1->Location = System::Drawing::Point(872, 0);
+			this->bunifuGradientPanel1->Name = L"bunifuGradientPanel1";
+			this->bunifuGradientPanel1->Quality = 10;
+			this->bunifuGradientPanel1->Size = System::Drawing::Size(88, 570);
+			this->bunifuGradientPanel1->TabIndex = 1;
 			// 
 			// Button_Profile
 			// 
@@ -541,25 +562,6 @@ namespace Otlob {
 			this->Button_Profile->Visible = false;
 			this->Button_Profile->Click += gcnew System::EventHandler(this, &OrderFood::Button_Profile_Click);
 			// 
-			// bunifuGradientPanel1
-			// 
-			this->bunifuGradientPanel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuGradientPanel1.BackgroundImage")));
-			this->bunifuGradientPanel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuGradientPanel1->Dock = System::Windows::Forms::DockStyle::Right;
-			this->bunifuGradientPanel1->GradientBottomLeft = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->bunifuGradientPanel1->GradientBottomRight = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuGradientPanel1->GradientTopLeft = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->bunifuGradientPanel1->GradientTopRight = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuGradientPanel1->Location = System::Drawing::Point(872, 0);
-			this->bunifuGradientPanel1->Name = L"bunifuGradientPanel1";
-			this->bunifuGradientPanel1->Quality = 10;
-			this->bunifuGradientPanel1->Size = System::Drawing::Size(88, 570);
-			this->bunifuGradientPanel1->TabIndex = 1;
-			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -577,6 +579,7 @@ namespace Otlob {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(960, 56);
 			this->panel1->TabIndex = 21;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &OrderFood::panel1_Paint);
 			// 
 			// label_Username
 			// 
@@ -591,13 +594,15 @@ namespace Otlob {
 			// label_UsernameN
 			// 
 			this->label_UsernameN->AutoSize = true;
+			this->label_UsernameN->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_UsernameN->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->label_UsernameN->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label_UsernameN.Image")));
 			this->label_UsernameN->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label_UsernameN->Location = System::Drawing::Point(709, 18);
 			this->label_UsernameN->Name = L"label_UsernameN";
-			this->label_UsernameN->Size = System::Drawing::Size(110, 25);
+			this->label_UsernameN->Size = System::Drawing::Size(120, 25);
 			this->label_UsernameN->TabIndex = 0;
 			this->label_UsernameN->Text = L"username :";
 			this->label_UsernameN->Visible = false;
@@ -1130,6 +1135,24 @@ private: System::Void button_SignIn_Click(System::Object^  sender, System::Event
 private: System::Void Button_SignUp_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::signup->Show();
 	this->Hide();
+}
+private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	if (GlobalClass::LogIn) {
+		label_UsernameN->Visible = true;
+		button_SignIn->Visible = false;
+		Button_SignUp->Visible = false;
+		label_Username->Text = GlobalClass::username;
+		Button_Profile->Visible = true;
+		button_SignOut->Visible = true;
+	}
+	else {
+		label_UsernameN->Visible = false;
+		button_SignIn->Visible = true;
+		Button_SignUp->Visible = true;
+		label_Username->Text = GlobalClass::username;
+		Button_Profile->Visible = false;
+		button_SignOut->Visible = false;
+	}
 }
 };
 }

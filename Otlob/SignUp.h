@@ -67,8 +67,8 @@ namespace Otlob {
 
 	private: System::Windows::Forms::Label^  label_SignUp;
 	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::Label^  label_Username;
-	private: System::Windows::Forms::Label^  label_UsernameN;
+
+
 
 
 
@@ -241,8 +241,6 @@ namespace Otlob {
 			this->textBox_LastName = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->label_SignUp = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label_Username = (gcnew System::Windows::Forms::Label());
-			this->label_UsernameN = (gcnew System::Windows::Forms::Label());
 			this->button_SignIn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->Button_SignUp = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->Panel_Header = (gcnew System::Windows::Forms::Panel());
@@ -757,8 +755,6 @@ namespace Otlob {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->panel1->Controls->Add(this->label_Username);
-			this->panel1->Controls->Add(this->label_UsernameN);
 			this->panel1->Controls->Add(this->button_SignIn);
 			this->panel1->Controls->Add(this->Button_SignUp);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
@@ -768,30 +764,6 @@ namespace Otlob {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(960, 56);
 			this->panel1->TabIndex = 13;
-			// 
-			// label_Username
-			// 
-			this->label_Username->AutoSize = true;
-			this->label_Username->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->label_Username->Location = System::Drawing::Point(812, 18);
-			this->label_Username->Name = L"label_Username";
-			this->label_Username->Size = System::Drawing::Size(0, 25);
-			this->label_Username->TabIndex = 0;
-			// 
-			// label_UsernameN
-			// 
-			this->label_UsernameN->AutoSize = true;
-			this->label_UsernameN->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->label_UsernameN->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label_UsernameN.Image")));
-			this->label_UsernameN->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->label_UsernameN->Location = System::Drawing::Point(709, 18);
-			this->label_UsernameN->Name = L"label_UsernameN";
-			this->label_UsernameN->Size = System::Drawing::Size(110, 25);
-			this->label_UsernameN->TabIndex = 0;
-			this->label_UsernameN->Text = L"username :";
-			this->label_UsernameN->Visible = false;
 			// 
 			// button_SignIn
 			// 
@@ -1252,7 +1224,6 @@ namespace Otlob {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
 			this->Panel_Header->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
@@ -1371,5 +1342,6 @@ private: System::Void button_AdminRoom_Click(System::Object^  sender, System::Ev
 	GlobalClass::AdminFormLogIn->Show();
 	this->Hide();
 }
+
 };
 }

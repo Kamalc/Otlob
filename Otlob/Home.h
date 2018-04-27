@@ -704,11 +704,13 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			// label_UsernameN
 			// 
 			this->label_UsernameN->AutoSize = true;
+			this->label_UsernameN->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_UsernameN->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->label_UsernameN->Location = System::Drawing::Point(709, 18);
 			this->label_UsernameN->Name = L"label_UsernameN";
-			this->label_UsernameN->Size = System::Drawing::Size(110, 25);
+			this->label_UsernameN->Size = System::Drawing::Size(120, 25);
 			this->label_UsernameN->TabIndex = 0;
 			this->label_UsernameN->Text = L"username :";
 			this->label_UsernameN->Visible = false;
@@ -1362,11 +1364,21 @@ private: System::Void Home_Load(System::Object^  sender, System::EventArgs^  e) 
 	}
 }
 private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-	if (GlobalClass::LogIn == true) {
+	if (GlobalClass::LogIn) {
 		label_UsernameN->Visible = true;
 		button_SignIn->Visible = false;
 		Button_SignUp->Visible = false;
 		label_Username->Text = GlobalClass::username;
+		Button_Profile->Visible = true;
+		button_SignOut->Visible = true;
+	}
+	else {
+		label_UsernameN->Visible = false;
+		button_SignIn->Visible = true;
+		Button_SignUp->Visible = true;
+		label_Username->Text = GlobalClass::username;
+		Button_Profile->Visible = false;
+		button_SignOut->Visible = false;
 	}
 }
 private: System::Void Button_ShowRs_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -1380,6 +1392,12 @@ private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::E
 private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::username = "";
 	GlobalClass::LogIn = false;
+	label_UsernameN->Visible = false;
+	button_SignIn->Visible = true;
+	Button_SignUp->Visible = true;
+	label_Username->Text = GlobalClass::username;
+	Button_Profile->Visible = false;
+	button_SignOut->Visible = false;
 }
 };
 }
